@@ -1,1 +1,5 @@
-landmark index 
+<h1>landmark index</h1>
+
+<% @landmarks.each do |landmark| %>
+  <li> <a href="/landmarks/<%= landmark.id %>"> <%=landmark.name %> </a></li>
+<% end %>

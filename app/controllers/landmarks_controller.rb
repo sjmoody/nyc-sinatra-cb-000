@@ -13,9 +13,12 @@ end
     erb:'/landmarks/new'
   end
 
-  post '/landmarks/new' do
+  post '/landmarks' do
   # route form subnmission to create a landmark
-    puts "form submitted: Params are #{params}"
+
+    @landmark = Landmark.create(params)
+    redirect("/landmarks/#{@landmark.id}")
+        redirect("/songs/#{@song.slug}")
   end
 
   get '/landmarks/:id' do
@@ -27,12 +30,15 @@ end
 
   get '/landmarks/:id/edit' do
   # view form to edit a single landmark
+  @landmark = Landmark.find_by_id(params[:id])
+
     erb:'/landmarks/edit'
   end
 
-  post '/landmarks/:id/edit' do
-  # controller to update landmark based on form submit
-    puts "form submitted: Params are #{params}"
+  patch '/landmarks/:id' do
+    # controller to update landmark based on form submit
+      puts "form submitted: Params are #{params}"
+      
   end
 
 

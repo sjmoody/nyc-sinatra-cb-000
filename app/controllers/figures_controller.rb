@@ -12,7 +12,7 @@ class FiguresController < ApplicationController
       erb:'/figures/new'
     end
 
-    post '/figures/new' do
+    post '/figures' do
     # route form subnmission to create a landmark
       puts "form submitted: Params are #{params}"
     end
@@ -25,6 +25,8 @@ class FiguresController < ApplicationController
 
     get '/figures/:id/edit' do
     # view form to edit a single landmark
+      @figure = Figure.find_by_id(params[:id])
+
       erb:'/figures/edit'
     end
 
