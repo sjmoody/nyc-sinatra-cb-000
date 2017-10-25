@@ -28,14 +28,6 @@ class FiguresController < ApplicationController
     end
 
 
-    post '/landmarks' do
-    # route form subnmission to create a landmark
-
-      @landmark = Landmark.create(params)
-      redirect("/landmarks/#{@landmark.id}")
-
-    end
-
 
     get '/figures/:id' do
     # see a single landmark

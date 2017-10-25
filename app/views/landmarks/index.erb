@@ -1,5 +1,6 @@
 <h1>landmark index</h1>
 
 <% @landmarks.each do |landmark| %>
-  <li> <a href="/landmarks/<%= landmark.id %>"> <%=landmark.name %> </a></li>
+  <li> <a href="/landmarks/<%= landmark.id %>"> <%=landmark.name %> </a> completed in: <%=landmark.year_completed%></li>
+  
 <% end %>

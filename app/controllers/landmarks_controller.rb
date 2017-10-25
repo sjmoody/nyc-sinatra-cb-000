@@ -15,8 +15,8 @@ end
 
   post '/landmarks' do
   # route form subnmission to create a landmark
-
-    @landmark = Landmark.create(params)
+    # binding.pry
+    @landmark = Landmark.create(params[:landmark])
     redirect("/landmarks/#{@landmark.id}")
 
   end
