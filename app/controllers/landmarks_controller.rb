@@ -18,7 +18,7 @@ end
 
     @landmark = Landmark.create(params)
     redirect("/landmarks/#{@landmark.id}")
-        redirect("/songs/#{@song.slug}")
+        
   end
 
   get '/landmarks/:id' do

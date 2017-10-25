@@ -14,8 +14,20 @@ class FiguresController < ApplicationController
 
     post '/figures' do
     # route form subnmission to create a landmark
-      puts "form submitted: Params are #{params}"
+      # binding.pry
+      @figure = Figure.create(params[:figure])
+      redirect("/figures/#{@figure.id}")
     end
+
+
+    post '/landmarks' do
+    # route form subnmission to create a landmark
+
+      @landmark = Landmark.create(params)
+      redirect("/landmarks/#{@landmark.id}")
+
+    end
+
 
     get '/figures/:id' do
     # see a single landmark
