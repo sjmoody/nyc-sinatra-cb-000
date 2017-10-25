@@ -5,7 +5,29 @@
 
   <label> Figure Name </label>
   <input type="text" name="name" value='<%= @figure.name %>'> </br>
+  <h2>Select relevant titles:</h2>
+  <% Title.all.each do |title| %>
+  <p>
+    <label><%=title.name%></label>
+  <input type="checkbox" name="figure[title_ids][]" value="<%= title.id%>" <%='checked' if @figure.titles.include?(title) %> id="<%= title.name%>" ></input>
+  </p>
+  <% end %>
+  <h3>And/or Create a new title:</h3>
+  <label>name:</label>
+    <input type="text" name="title[name]"</input>
 
+  <h2>Select relevant landmarks:</h2>
+  <% Landmark.all.each do |landmark| %>
+  <p>
+    <label><%=landmark.name%></label>
+  <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark) %> id="<%= landmark.name%>" ></input>
+  </p>
+  <% end %>
+  <h3>And/or Create a new landmark:</h3>
+  <label>name:</label>
+    <input type="text" name="landmark[name]"</input>
+
+  <p>
 
   <input type="submit" value="Save">
 </form>

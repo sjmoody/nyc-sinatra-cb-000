@@ -11,6 +11,9 @@
 <input type="checkbox" name="figure[title_ids][]" value="<%= title.id%>" id="<%= title.name%>" ></input>
 </p>
 <% end %>
+<h3>And/or Create a new title:</h3>
+<label>name:</label>
+  <input type="text" name="title[name]"</input>
 
 <h2>Select relevant landmarks:</h2>
 <% Landmark.all.each do |landmark| %>
@@ -19,8 +22,11 @@
 <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id%>" id="<%= landmark.name%>" ></input>
 </p>
 <% end %>
+<h3>And/or Create a new landmark:</h3>
+<label>name:</label>
+  <input type="text" name="landmark[name]"</input>
 
-
-
+<p>
   <input type="submit" value="Create">
+</p>
 </form>
