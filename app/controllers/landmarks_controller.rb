@@ -37,10 +37,14 @@ end
 
   patch '/landmarks/:id' do
     # controller to update landmark based on form submit
-      puts "form submitted: Params are #{params}"
-      
-  end
+    @landmark = Landmark.find_by_id(params[:id])
 
+    @landmark.name = params[:name]
+    @landmark.year_completed = params[:year_completed]
+    @landmark.save
+      redirect("/landmarks/#{@landmark.id}")
+
+  end
 
 
 end

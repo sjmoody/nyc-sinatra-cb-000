@@ -30,10 +30,13 @@ class FiguresController < ApplicationController
       erb:'/figures/edit'
     end
 
-    post '/figures/:id/edit' do
+    patch '/figures/:id' do
     # controller to update landmark based on form submit
-      puts "form submitted: Params are #{params}"
+      # binding.pry
+      @figure = Figure.find_by_id(params[:id])
+      @figure.name = params[:name]
+      @figure.save
+      redirect("/figures/#{@figure.id}")
     end
-
 
 end

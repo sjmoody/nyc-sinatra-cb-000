@@ -13,7 +13,7 @@ Model
 8. Commit changes
 
 Controllers
-1. Create controllers for Landmarks and figures - done 
+1. Create controllers for Landmarks and figures - done
 2. Review previous code to ensure config.ru works - done
 3. Test with basic views to ensure routing works as expected - done
 4. Commit
@@ -35,11 +35,8 @@ post '/landmarks/:id/edit' controller to update landmark based on form submit
 
 
 Views
-10. Build views with forms.  Review last project for forms relating multiple models
-11. Commit
-
-Views to build:
-
+10. Build views with forms.  Review last project for forms relating multiple models. Done
+11. Commit. Done
 
 
 Iterate
