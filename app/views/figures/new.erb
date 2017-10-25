@@ -19,7 +19,7 @@
 <% Landmark.all.each do |landmark| %>
 <p>
   <label><%=landmark.name%></label>
-<input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id%>" id="landmark_<%= landmark.name%>" ></input>
+<input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id%>" id="landmark_<%= landmark.id%>" ></input>
 </p>
 <% end %>
 <h3>And/or Create a new landmark:</h3>

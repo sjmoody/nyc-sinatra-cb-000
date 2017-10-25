@@ -54,7 +54,13 @@ class FiguresController < ApplicationController
     # controller to update landmark based on form submit
       # binding.pry
       @figure = Figure.find_by_id(params[:id])
-      @figure.name = params[:name]
+      @figure.update(params[:figure])
+      if !params["landmark"]["name"].empty?
+        @figure.landmarks << Landmark.create(name: params["landmark"]["name"])
+      end
+      if !params["title"]["name"].empty?
+        @figure.titles << Title.create(name: params["title"]["name"])
+      end
       @figure.save
       redirect("/figures/#{@figure.id}")
     end
